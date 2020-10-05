@@ -11,7 +11,7 @@ class Bomb extends Component {
         }, 1000);
     }
     render() {
-        this.countDown()
+        this.state.secondsLeft > 0? this.countDown() : clearTimeout(this.countDown)
         return (
             <div>
                 {this.state.secondsLeft === 0? 'Boom!' : `${this.state.secondsLeft} seconds left before I go boom!`}
